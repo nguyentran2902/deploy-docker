@@ -1,0 +1,14 @@
+version: "3"
+services:
+  nguyenmongo:
+    image: mongo:latest
+    container_name: "nguyenmongo"
+    ports:
+      - 27017:27017
+  nguyen-springboot:
+    image: nguyen-springboot:0.0.1
+    container_name: nguyen-springboot
+    ports:
+      - 8080:8080
+    links:
+      - nguyenmongo
